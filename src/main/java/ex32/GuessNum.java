@@ -16,16 +16,7 @@ public class GuessNum {
             System.exit(1);
         }
 
-        int number = 0;
-        if (difficulty == 1){
-            number = (int) (Math.random() * 10);
-        } else if (difficulty == 2){
-            number = (int) (Math.random() * 100);
-        } else if (difficulty == 3){
-            number = (int) (Math.random() * 1000);
-        } else {
-            System.out.println("Not a difficulty");
-        }
+        int number = randomNumber(difficulty);
         System.out.print("I have my number. What's your guess? ");
         int guess = -1;
         int guessCount = 0;
@@ -44,6 +35,18 @@ public class GuessNum {
                 System.out.print("Not a number. Guess again: ");
             }
         }
-
+    }
+    public static int randomNumber(int difficulty){
+        int number = 0;
+        if (difficulty == 1){
+            number = (int) (Math.random() * 10);
+        } else if (difficulty == 2){
+            number = (int) (Math.random() * 100);
+        } else if (difficulty == 3){
+            number = (int) (Math.random() * 1000);
+        } else {
+            System.out.println("Not a difficulty");
+        }
+        return number;
     }
 }

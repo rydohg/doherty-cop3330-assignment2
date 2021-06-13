@@ -19,10 +19,15 @@ public class KarvonenHeart {
             }
             incorrectInput = false;
         }
-        System.out.println("Intensity | Rate ");
+        System.out.println("Intensity | Rate\n" + rateTable(rate, age));
+
+    }
+    public static String rateTable(int heartRate, int age){
+        StringBuilder printString = new StringBuilder();
         for (int i = 55; i <= 95; i += 5) {
-            int karvonenRate = (int) Math.round((((220 - age) - rate) * i / 100.0) + rate);
-            System.out.println(i + "%       | " + karvonenRate + " bpm");
+            int karvonenRate = (int) Math.round((((220 - age) - heartRate) * i / 100.0) + heartRate);
+            printString.append(i).append("%       | ").append(karvonenRate).append(" bpm\n");
         }
+        return printString.toString();
     }
 }

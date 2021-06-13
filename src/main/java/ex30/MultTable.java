@@ -2,16 +2,21 @@ package ex30;
 
 public class MultTable {
     public static void main(String[] args) {
+        System.out.println(makeTable());
+    }
+    public static String makeTable(){
+        StringBuilder printString = new StringBuilder();
         for (int i = 1; i <= 12; i++) {
             for (int j = 1; j <= 12; j++) {
-                if(i*j >= 10 && i*j < 100){
-                    System.out.print(" ");
-                } else if (i*j < 10){
-                    System.out.print("  ");
+                if (i * j >= 10 && i * j < 100) {
+                    printString.append(" ");
+                } else if (i * j < 10) {
+                    printString.append("  ");
                 }
-                System.out.print(i * j + " ");
+                printString.append(i * j).append(" ");
             }
-            System.out.println();
+            printString.append("\n");
         }
+        return printString.toString();
     }
 }
